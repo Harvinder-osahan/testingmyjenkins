@@ -9,7 +9,7 @@
   }
 
   body {
-    background: olive;
+    background: black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,8 +56,8 @@ function getRandomInt(min, max) {
 function loop() {
   requestAnimationFrame(loop);
 
-  // slow game loop to 6 fps instead of 60 (60/6 = 10)
-  if (++count < 10) {
+  // slow game loop to 4 fps instead of 60 (60/4 = 15)
+  if (++count < 15) {
     return;
   }
 
@@ -93,11 +93,11 @@ function loop() {
   }
 
   // draw apple
-  context.fillStyle = 'yellow';
+  context.fillStyle = 'red';
   context.fillRect(apple.x, apple.y, grid-1, grid-1);
 
   // draw snake one cell at a time
-  context.fillStyle = 'brown';
+  context.fillStyle = 'white';
   snake.cells.forEach(function(cell, index) {
     
     // drawing 1 px smaller than the grid creates a grid effect in the snake body so you can see how long it is
@@ -161,6 +161,7 @@ document.addEventListener('keydown', function(e) {
 });
 
 // start the game
+//colorchanged and speed reduced
 requestAnimationFrame(loop);
 </script>
 </body>
