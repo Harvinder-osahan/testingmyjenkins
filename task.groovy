@@ -26,7 +26,7 @@ job("LaunchingDockerContainer"){
 
 }
 
-job("LaunchingDockerContainer"){
+job("Launching Kubernetes"){
 	description("Launching a deployment on Kubernetes ")
 	triggers{
 		 upstream{
