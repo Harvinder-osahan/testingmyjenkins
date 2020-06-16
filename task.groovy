@@ -8,6 +8,6 @@ job("JobFromGroovy"){
                 scm("* * * * *")
                 }
 	steps{
-         shell('sudo docker run -dit --name webgame -p 1919:80 harvinderosahan31/httpd-snake-game:v3')
+         shell('sudo docker run -dit --name webgame -p 1919:80 -v  "$PWD":/usr/local/apache2/htdocs/   httpd')
         }       
 }
