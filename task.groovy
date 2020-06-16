@@ -2,7 +2,7 @@ job("JobFromGroovy"){
 	description("Launching a Docker Container")
 	
         scm {
-              github('Harvinder-osahan/testingmyjenkins', 'Groovy')
+              github('Harvinder-osahan/testingmyjenkins', 'master')
              }
         triggers{
                 scm("* * * * *")
