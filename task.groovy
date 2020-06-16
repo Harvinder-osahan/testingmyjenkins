@@ -31,8 +31,6 @@ job("LaunchingDockerContainer"){
 	         }
                 }
 	steps{
-         shell('if sudo kubectl get deployments | grep mygamedep; then  exit 0; 
-	         else sudo cd /root/DevOpsAL;  sudo kubectl create -f /root/DevOpsAL/deploy.yml;
-                  sudo kubectl expose deployment mygamedep --port=80 --type=NodePort;fi')
+         shell('if sudo kubectl get deployments | grep mygamedep; then  exit 0; else sudo cd /root/DevOpsAL;  sudo kubectl create -f /root/DevOpsAL/deploy.yml;  sudo kubectl expose deployment mygamedep --port=80 --type=NodePort;fi')
         }   
 }
