@@ -13,7 +13,11 @@ job("LaunchingDockerContainer"){
              }
         triggers{
                 scm("* * * * *")
-                }
+		 upstream{
+		 upstreamProjects("JobFromGroovy")
+		 threshold("SUCCESS")
+		  }
+		 }
          
 	steps{
          shell('sudo docker run -dit --name webgame -p 1919:80 "$PWD":/usr/local/apache2/htdocs/  httpd')
